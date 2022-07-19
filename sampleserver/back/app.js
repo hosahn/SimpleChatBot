@@ -3,7 +3,9 @@ const cors = require("cors");
 const app = express();
 const bodyPaser = require("body-parser");
 const axios = require("axios");
+const helmet = require("helmet");
 
+app.use(helmet());
 app.use(cors());
 app.use(bodyPaser.json());
 app.post("/message", async (req, res) => {
